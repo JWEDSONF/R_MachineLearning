@@ -32,19 +32,28 @@ Após o mapeamento das métricas, o algoritmo RNA ficou em primeiro lugar, porem
 O grande destaque foi o SVM, onde seu resultado ficou muito próximo a RNA e um valor alto na métrica Kappa de Cohen, resultando em um modelo confiante e de boa performe.
 Vale ressaltar que o Random Forest também teve seu destaque, principalmente ao lidar melhor que os demais quando não é realizado o pré-processamento, uma vez que é um modelo baseado em regras e entregando uma excelente performance.
 A métrica acuracia já é muito conhecida e de fácil interpretação, além dela usamos o Kappa de Cohen, um teste de concordância que visa identificar se o classificador é confiante ou não, é sempre menor ou igual a 1. Valores 0 ou menos indicam que o classificador é inútil. Não existe uma forma padronizada de interpretar seus valores.
-Resultados e Análises -  SCRIPT 02
+
+### Resultados e Análises -  SCRIPT 02
 O Script 2 é usado o método de validação cruzada, onde foi definido a execução de 30 vezes o algoritmos para eliminar redundância na separações automática aleatória em dados de teste e treinamento, deixando o modelo mais robusto e facilitando a escolha adequada do algoritmos.
 Foi utilizado K-Fold =10, ou seja, a cada execução o classificador separa de forma automática 10 variações aleatória de dados para Teste e Treinamento. 
+
+![CrossoValidadtion](https://github.com/JWEDSONF/R_MachineLearning/blob/master/K-fold_cross_validation_EN.svg)
  
 Foi criado um loop para armazenar em uma variável os valores da métrica acurácia.
 Para substituir os algoritmos de classificação, é necessário apenas mudar o parâmetro method.
  
 Naive Bayes -> method = 'avNNet'
+
 Arvore de Decisão -> method = 'rpart'
+
 Random Forest -> method = 'rf'
+
 KNN -> method = 'knn'
+
 RNA -> method = 'avNNet'
+
 SVM -> method = 'svmRadial'
+
 Regração Logistica -> method = 'glm', family = 'binomial'
 
 Após a execução de todos os classificadores, foi criado um Ranqueamento de precisão.
