@@ -1,4 +1,4 @@
-# Prevendo Risco de Credito com diversos algoritmos
+# Prevendo Risco de Crédito com Machine Learning e comparando os resultados dos algoritmos
 
 
 
