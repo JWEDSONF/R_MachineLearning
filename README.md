@@ -41,6 +41,8 @@ Foi utilizado K-Fold =10, ou seja, a cada execução o classificador separa de f
  
 Foi criado um loop para armazenar em uma variável os valores da métrica acurácia.
 Para substituir os algoritmos de classificação, é necessário apenas mudar o parâmetro method.
+
+![loop_resultado](https://github.com/JWEDSONF/R_MachineLearning/blob/master/loop_resultados.png)
  
 Naive Bayes -> method = 'avNNet'
 
@@ -57,19 +59,23 @@ SVM -> method = 'svmRadial'
 Regração Logistica -> method = 'glm', family = 'binomial'
 
 Após a execução de todos os classificadores, foi criado um Ranqueamento de precisão.
+
+![Resultado das Execuçoes](https://github.com/JWEDSONF/R_MachineLearning/blob/master/CrossValidation_Execucoes.PNG)
  
 
 Foi observado que a RNA e Random Forest se destacaram dos demais, e o SVM concorreu com o KNN para a 3º colocação.
 No gráfico abaixo expressa melhor o ranqueamento em cada execução.
 
- 
+ ![Resultado Rank](https://github.com/JWEDSONF/R_MachineLearning/blob/master/CrossValidation_Rank.PNG)
 
-Teste de Nemenyi e Conclusão Final
+### Teste de Nemenyi e Conclusão Final
 O teste Nemenyi serve para comparar os modelos e identificar se existe diferença estatística entre eles.
 Foi criado um algoritmo simples para reproduzir os dados de ranqueamento salvos em .csv usando a biblioteca “tsutils” desenvolvida pelo Pesquisador Nikolaos Kourentzes.
 Ao plotar usando a função nemenyi, é identificado a distância crítica de 1.644.
 Para analisar os gráficos abaixo, é necessário realizar uma comparação dupla.
  
+
+![Friedman](https://github.com/JWEDSONF/R_MachineLearning/blob/master/Grafico_Friedman01.png)
 
 EX1: A nota do SVM é 3,43 e RNA é 1, com diferença de 2,43 entre eles.
 	Significa que RNA é estatisticamente melhor que SVM.
@@ -85,11 +91,15 @@ Outro ponto é que o método de Validação cruzada (Script 2) é melhor para av
 
 
 
-Referências:
+### Referências:
 Coeficiente de concordância de Kappa: https://operdata.com.br/blog/coeficiente-de-concordancia-de-kappa/
+
 Modelos para Biblioteca CARET: https://rdrr.io/cran/caret/man/models.html
+
 Help dos parâmetros da Biblioteca H2O para o algoritmo de Redes Neurais: http://127.0.0.1:30372/library/h2o/html/h2o.deeplearning.html
+
 Instalação do Devtools, e o pacote trnnick do Pesquisador Nikolaos Kourentzes para executar executar o teste Nemenyi: https://kourentzes.com/forecasting/2014/04/19/tstools-for-r/
+
 K-Fold Cross Validatioin: https://machinelearningmastery.com/k-fold-cross-validation/
 
  
